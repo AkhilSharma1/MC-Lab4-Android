@@ -7,23 +7,26 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.lab4.lab4android.utils.BTUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import timber.log.Timber;
 import uk.co.alt236.bluetoothlelib.device.beacon.ibeacon.IBeaconDevice;
 
 
 public class DeviceScanListAdapter extends BaseAdapter {
 
     private final LayoutInflater mLayoutInflater;
+    private OnBeaconFoundListener listener;
     private List<IBeaconDevice> mDevices;
 
-     DeviceScanListAdapter(Context context) {
+     DeviceScanListAdapter(Context context, OnBeaconFoundListener listener) {
         mLayoutInflater = LayoutInflater.from(context);
-        mDevices = new ArrayList<>();
+         this.listener = listener;
+         mDevices = new ArrayList<>();
     }
 
     @Override
@@ -55,10 +58,14 @@ public class DeviceScanListAdapter extends BaseAdapter {
         IBeaconDevice device = getItem(position);
         holder.beaconName.setText(device.getName());
         holder.beaconUUID.setText(device.getUUID());
-        Timber.d("Major is :" + device.getMajor());
-        Timber.d("Minor is :" + device.getMinor());
-        holder.beaconMajor.setText(Integer.toHexString(device.getMajor()));
-        holder.beaconMinor.setText(Integer.toHexString(device.getMinor()));
+
+        String major = Integer.toHexString(device.getMajor());
+        String minor = Integer.toHexString(device.getMinor());
+
+        holder.beaconMajor.setText(major);
+        holder.beaconMinor.setText(minor);
+
+        listener.onBeaconFound(major);
 
         return convertView;
     }
@@ -76,8 +83,10 @@ public class DeviceScanListAdapter extends BaseAdapter {
         }
 
         if (!isAlreadyInList) {
-            mDevices.add(device);
-            notifyDataSetChanged();
+            if(device.getUUID().equalsIgnoreCase(BTUtils.SERVICE_UUID)) {
+                mDevices.add(device);
+                notifyDataSetChanged();
+            }
         }
     }
 
@@ -105,8 +114,10 @@ public class DeviceScanListAdapter extends BaseAdapter {
          DeviceHolder(View view) {
             ButterKnife.bind(this, view);
         }
+    }
 
-
+    public interface OnBeaconFoundListener{
+        void onBeaconFound(String majorId);
     }
 
 }

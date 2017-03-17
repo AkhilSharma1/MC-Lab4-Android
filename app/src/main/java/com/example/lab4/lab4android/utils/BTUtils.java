@@ -11,7 +11,6 @@ import android.bluetooth.le.ScanSettings;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.ParcelUuid;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
@@ -34,8 +33,7 @@ import static android.content.ContentValues.TAG;
 
 public class BTUtils {
 
-    public static final ParcelUuid SERVICE_UUID = ParcelUuid
-            .fromString("00726f62-6f74-7061-6a61-6d61732e6361");
+    public static final String SERVICE_UUID = "00726f62-6f74-7061-6a61-6d61732e6361";
 
     private static final int REQ_BLUETOOTH_ENABLE = 1000;
     private static final int DEVICE_SCAN_MILLISECONDS = 10000;
