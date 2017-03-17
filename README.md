@@ -27,6 +27,8 @@ Libraries used
 - Retrofit[http://square.github.io/retrofit/]
 - Timber[https://github.com/JakeWharton/timber]
 - Dexter[https://github.com/Karumi/Dexter]
+- Bluetooth LE Library for Android[https://android-arsenal.com/details/1/693]
+- Blueteeth[https://android-arsenal.com/details/1/3512]
 
 
 
@@ -52,5 +54,3 @@ Libraries used
 
 
 
-
-All Beacons have the same UUIDs 
