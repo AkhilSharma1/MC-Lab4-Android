@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         sectionsPagerAdapter.addFragment(new ScannerFragment(), getString(R.string.scanner));
-        sectionsPagerAdapter.addFragment(new BeaconListFragment(), getString(R.string.title_beacons_list));
         sectionsPagerAdapter.addFragment(new EventLoggerFragment(), getString(R.string.event_log));
         viewPager.setAdapter(sectionsPagerAdapter);
     }

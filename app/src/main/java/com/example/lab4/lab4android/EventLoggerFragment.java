@@ -1,7 +1,6 @@
 package com.example.lab4.lab4android;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -33,10 +32,10 @@ public class EventLoggerFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_event_logger, container, false);
     }
 
-    private boolean isUUIDValid(UUID uuid) {
+   /* private boolean isUUIDValid(UUID uuid) {
         return this.getContext().
             getSharedPreferences(BeaconListFragment.BEACONS_LIST, Context.MODE_PRIVATE).
             contains(uuid.toString());
-    }
+    }*/
 
 }

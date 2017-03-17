@@ -59,6 +59,7 @@ public class ScannerFragment extends Fragment{
             BTUtils.startScanning(this.getContext(), mDeviceAdapter, buttonView,progressBar);
         }else{
             BTUtils.stopScanning(this.getContext());
+            progressBar.setVisibility(View.INVISIBLE);
         }
     }
 

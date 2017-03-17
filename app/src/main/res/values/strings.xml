@@ -12,6 +12,7 @@
     <string name="button_stop_listening">STOP LISTENING</string>
     <string name="msg_no_ble">No BLE Support...</string>
     <string name="scanner">Scanner</string>
+    <string name="already_scanning">Scan already running</string>
 
 
 </resources>
