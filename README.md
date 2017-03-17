@@ -23,7 +23,7 @@ The UUId is hard-coded in file BTUTils.java (line 25)
    
 Talking to the Node server
  -------------------------
- In our case the android app sends 40,41,42,43 (one from each beacon) to the node server which
+ In our case the android app sends 40,41,42,43 (major ids;one from each beacon) to the node server which
  handles the rest.
  
    
