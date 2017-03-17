@@ -4,6 +4,9 @@ apply plugin: 'me.tatarka.retrolambda'
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url "https://dl.bintray.com/alt236/maven"
+        }
     }
 
     dependencies {
@@ -49,6 +52,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.karumi:dexter:4.0.0'
+    compile 'uk.co.alt236:bluetooth-le-library-android:1.0.0'
     compile 'com.robotpajamas.blueteeth:blueteeth:0.2.0'
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'

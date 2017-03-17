@@ -7,3 +7,6 @@
 /build
 /captures
 .externalNativeBuild
+app/libs/
+Would skip repository app/src/main/java/com/example/lab4/lab4android
+app/src/main/res/drawable/
