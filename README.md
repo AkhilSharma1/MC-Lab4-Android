@@ -25,12 +25,13 @@ Talking to the Node server
  -------------------------
  In our case the android app sends 40,41,42,43 (major ids;one from each beacon) to the node server which
  handles the rest.
+ The url is defined in strings.xml(R.string.url, http://192.168.2.5:8080/?beacon=)
  
    
 Libraries used
 --------------
 - Butterknife[http://jakewharton.github.io/butterknife]
-- Retrofit[http://square.github.io/retrofit/]
+- OkHttp3[https://github.com/square/okhttp]
 - Timber[https://github.com/JakeWharton/timber]
 - Dexter[https://github.com/Karumi/Dexter]
 - Bluetooth LE Library for Android[https://android-arsenal.com/details/1/693]
