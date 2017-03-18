@@ -14,6 +14,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 import uk.co.alt236.bluetoothlelib.device.beacon.ibeacon.IBeaconDevice;
 
 
@@ -65,7 +66,7 @@ public class DeviceScanListAdapter extends BaseAdapter {
         holder.beaconMajor.setText(major);
         holder.beaconMinor.setText(minor);
 
-        listener.onBeaconFound(major);
+      //  listener.onBeaconFound(major);
 
         return convertView;
     }
@@ -84,6 +85,13 @@ public class DeviceScanListAdapter extends BaseAdapter {
 
         if (!isAlreadyInList) {
             if(device.getUUID().equalsIgnoreCase(BTUtils.SERVICE_UUID)) {
+                String major = Integer.toHexString(device.getMajor());
+
+                Timber.d("adding device with major " + major);
+
+                listener.onBeaconFound(major);
+
+
                 mDevices.add(device);
                 notifyDataSetChanged();
             }
@@ -93,7 +101,7 @@ public class DeviceScanListAdapter extends BaseAdapter {
 
 
      void clear() {
-        mDevices.clear();
+         mDevices.clear();
         notifyDataSetChanged();
     }
 
