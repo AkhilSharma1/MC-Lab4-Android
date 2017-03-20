@@ -1,5 +1,5 @@
 <resources>
-    <string name="url">http://192.168.2.5:8080/?beacon=</string>
+    <string name="url">http://192.168.2.3:8080/beacon/?beacon=,</string>
 
     <string name="app_name">Lab4Android</string>
     <string name="action_settings">Settings</string>
